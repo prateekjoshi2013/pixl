@@ -56,10 +56,11 @@ func (renderer *SwatchRenderer) Refresh() {
 	renderer.square.FillColor = renderer.parent.Color
 	if renderer.parent.Selected {
 		renderer.square.StrokeWidth = 3
-		renderer.square.StrokeColor = color.NRGBA{255, 255, 255, 255} // white
+		renderer.square.StrokeColor = color.NRGBA{0, 0, 0, 255} // white
 		renderer.objects[0] = &renderer.square
 	} else {
-		renderer.square.StrokeWidth = 0
+		renderer.square.StrokeWidth = 1
+		renderer.square.StrokeColor = color.NRGBA{0, 0, 0, 255}
 		renderer.objects[0] = &renderer.square
 	}
 	canvas.Refresh(renderer.parent)
